@@ -33,20 +33,21 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>mysql-存储过程 - Y博客</title>
-  <meta name="keywords" content="数据库,null">
+  <meta name="keywords" content="数据库,学习笔记,null">
   <meta desc name="description" content="记录自己学习笔记的博客 - yc - Y博客">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql-存储过程">
 <meta property="og:url" content="http://example.com/2023/05/02/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Y博客">
-<meta property="og:description" content="存储过程1. 介绍存储过程是事先经过编译并存储在数据库中的一段SQL语句的集合，调用存储过程可以简化应用开发人员的很多工作，减少数据在数据库和应用服务器之间的传输，对于提高数据处理的效率是有好处的。 存储过程思想上很简单，就是数据库SQL语言层面的代码封装与重用，类似于函数或者说API，封装了系列操作，暴露接口给你进行操作。  特点 封装，复用 可以接收参数，也可以返回数据 减少网络交互，效率提升">
+<meta property="og:description" content="存储过程介绍存储过程是事先经过编译并存储在数据库中的一段SQL语句的集合，调用存储过程可以简化应用开发人员的很多工作，减少数据在数据库和应用服务器之间的传输，对于提高数据处理的效率是有好处的。 存储过程思想上很简单，就是数据库SQL语言层面的代码封装与重用，类似于函数或者说API，封装了系列操作，暴露接口给你进行操作。  特点 封装，复用 可以接收参数，也可以返回数据 减少网络交互，效率提升">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-05-02T07:33:39.000Z">
-<meta property="article:modified_time" content="2023-05-03T10:27:47.035Z">
+<meta property="article:modified_time" content="2023-05-04T14:51:24.655Z">
 <meta property="article:author" content="yc">
 <meta property="article:tag" content="数据库">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1907,7 +1908,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1683112404201),
+    lastupdate: new Date(1683212041430),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2855,7 +2856,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><p>存储过程是事先经过编译并存储在数据库中的一段SQL语句的集合，调用存储过程可以简化应用开发人员的很多工作，减少数据在数据库和应用服务器之间的传输，对于提高数据处理的效率是有好处的。</p>
+    <h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a><strong>存储过程</strong></h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><strong>介绍</strong></h2><p>存储过程是事先经过编译并存储在数据库中的一段SQL语句的集合，调用存储过程可以简化应用开发人员的很多工作，减少数据在数据库和应用服务器之间的传输，对于提高数据处理的效率是有好处的。</p>
 <p>存储过程思想上很简单，就是数据库SQL语言层面的代码封装与重用，类似于函数或者说API，封装了系列操作，暴露接口给你进行操作。</p>
 <ul>
 <li><p><strong>特点</strong></p>
@@ -2864,7 +2865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>减少网络交互，效率提升</p>
 </li>
 </ul>
-<h2 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2. 基本语法"></a>2. 基本语法</h2><ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a><strong>基本语法</strong></h2><ul>
 <li><p><strong>创建</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 存储过程名称([参数列表])</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="comment">-- SQL语句</span></span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>调用</strong></p>
@@ -2902,10 +2903,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-03T18:27:47+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-04T22:51:24+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年5月3日</p>
+    <p>更新于：2023年5月4日</p>
   </a>
 </div>
 
@@ -2914,8 +2915,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数据库</p></a></div>
-  <span hidden itemprop="keywords">数据库</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数据库</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div>
+  <span hidden itemprop="keywords">数据库 学习笔记</span>
 
 
         
@@ -2985,6 +2986,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2023/05/04/p1-%E6%96%87%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>p1 文件的基本使用</p>
+          <p class='content'>文件的基本使用文件
+什么是文件
+文件是保存数据的地方，比如word文档，txt文件，excel文件……都是文件。即可以保存一张图片，也可以保持视频，声音……
+
+
+
+文件流
+文件在程序中是以流的形...</p>
+        </a>
+      
       
         <a class='next' href='/2023/05/01/hello-world/'>
           <p class='title'>Hello World<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -3046,7 +3059,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2. 基本语法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">基本语法</span></a></li></ol>
     </div>
   </section>
 
@@ -4183,7 +4196,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/mysql学习/","name":"mysql学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/05/02/mysql-存储过程/","name":"mysql-存储过程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mysql-存储过程","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/05/02/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/05/02/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/","wordCount":0,"datePublished":"2023-05-02T07:33:39.000Z","dateModified":"2023-05-03T10:27:47.035Z","articleSection":"mysql学习","keywords":"数据库","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/mysql学习/","name":"mysql学习"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/05/02/mysql-存储过程/","name":"mysql-存储过程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"mysql-存储过程","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/05/02/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/05/02/mysql-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/","wordCount":0,"datePublished":"2023-05-02T07:33:39.000Z","dateModified":"2023-05-04T14:51:24.655Z","articleSection":"mysql学习","keywords":"数据库,学习笔记","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
