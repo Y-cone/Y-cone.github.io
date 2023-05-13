@@ -1904,7 +1904,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1683553165317),
+    lastupdate: new Date(1683972281455),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2806,7 +2806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/08/p11-Properties/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/3095cec1.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -2824,7 +2824,145 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/08/p11-Properties/"  itemprop="url">
+      <a href="/3095cec1.html"  itemprop="url">
+        mysql 锁
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        锁概述
+介绍 
+锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源（CPU、RAM、I/O）的争用以外，数据也是一种供许多用户共享的资源。如何保证数据并发访问的一致性、有效性是所有数据库必须解决的一个问题，锁冲突也是影响数据库并发访问性能的一个重要因素。从这个角度来说，锁对数据库而言显得尤其重要，也更加复杂。
+
+分类
+MySQL中的锁，按照锁的粒度分，分为以下三...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-09T21:39:09+08:00">2023-05-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/mysql%E5%AD%A6%E4%B9%A0/">mysql学习</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/mysql%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">mysql学习</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/3095cec1.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/d71f2100.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Y博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Y博客">
+    <meta itemprop="description" content="记录自己学习笔记的博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/d71f2100.html"  itemprop="url">
+        mysql-触发器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        触发器介绍触发器是与表有关的数据库对象，指在insert/update/delete之前或之后，触发并执行触发器中定义SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性，日志记录，数据校验等操作。
+使用别 名OLD 和 NEW 来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。现在触发器还只支持行级触发，不支持语句级触发。
+
+
+
+触发器类型
+NEW 和 OLD
+...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-09T21:37:31+08:00">2023-05-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/mysql%E5%AD%A6%E4%B9%A0/">mysql学习</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/mysql%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">mysql学习</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/d71f2100.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/c33f51f5.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Y博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Y博客">
+    <meta itemprop="description" content="记录自己学习笔记的博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/c33f51f5.html"  itemprop="url">
         p11 Properties
       </a>
     </h2>
@@ -2870,7 +3008,7 @@ setPropert...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/08/p11-Properties/' itemprop="url">
+          <a class='readmore' href='/c33f51f5.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2886,7 +3024,7 @@ setPropert...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/08/mysql-存储函数/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/803d30ed.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -2904,7 +3042,7 @@ setPropert...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/08/mysql-%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0/"  itemprop="url">
+      <a href="/803d30ed.html"  itemprop="url">
         mysql-存储函数
       </a>
     </h2>
@@ -2938,7 +3076,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/08/mysql-%E5%AD%98%E5%82%A8%E5%87%BD%E6%95%B0/' itemprop="url">
+          <a class='readmore' href='/803d30ed.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2954,7 +3092,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/p10-打印流/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/3aacf741.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -2972,7 +3110,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/07/p10-%E6%89%93%E5%8D%B0%E6%B5%81/"  itemprop="url">
+      <a href="/3aacf741.html"  itemprop="url">
         p10 打印流
       </a>
     </h2>
@@ -3004,7 +3142,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/07/p10-%E6%89%93%E5%8D%B0%E6%B5%81/' itemprop="url">
+          <a class='readmore' href='/3aacf741.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3020,7 +3158,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/p9-转换流-InputStreamReader-和-OutputStreamWriter/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/941525aa.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -3038,7 +3176,7 @@ DETERMINISTIC：相同的输入参数总是产生相同的结果...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/07/p9-%E8%BD%AC%E6%8D%A2%E6%B5%81-InputStreamReader-%E5%92%8C-OutputStreamWriter/"  itemprop="url">
+      <a href="/941525aa.html"  itemprop="url">
         p9 转换流-InputStreamReader 和 OutputStreamWriter
       </a>
     </h2>
@@ -3072,7 +3210,7 @@ OutputStreamWriter：Writer的子类，实现将OutputStream（字节流）包�
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/07/p9-%E8%BD%AC%E6%8D%A2%E6%B5%81-InputStreamReader-%E5%92%8C-OutputStreamWriter/' itemprop="url">
+          <a class='readmore' href='/941525aa.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3088,7 +3226,7 @@ OutputStreamWriter：Writer的子类，实现将OutputStream（字节流）包�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/p8-标准输入输出流/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/a4b4e77f.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -3106,7 +3244,7 @@ OutputStreamWriter：Writer的子类，实现将OutputStream（字节流）包�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/07/p8-%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/"  itemprop="url">
+      <a href="/a4b4e77f.html"  itemprop="url">
         p8 标准输入输出流
       </a>
     </h2>
@@ -3158,7 +3296,7 @@ PrintStream
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/07/p8-%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81/' itemprop="url">
+          <a class='readmore' href='/a4b4e77f.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3174,7 +3312,7 @@ PrintStream
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/p7-对象流-ObjectInputStream-和-ObjectOutputStream/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/4a64dcab.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -3192,7 +3330,7 @@ PrintStream
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/07/p7-%E5%AF%B9%E8%B1%A1%E6%B5%81-ObjectInputStream-%E5%92%8C-ObjectOutputStream/"  itemprop="url">
+      <a href="/4a64dcab.html"  itemprop="url">
         p7 对象流-ObjectInputStream 和 ObjectOutputStream
       </a>
     </h2>
@@ -3226,7 +3364,7 @@ PrintStream
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/07/p7-%E5%AF%B9%E8%B1%A1%E6%B5%81-ObjectInputStream-%E5%92%8C-ObjectOutputStream/' itemprop="url">
+          <a class='readmore' href='/4a64dcab.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3242,7 +3380,7 @@ PrintStream
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/07/p6-BufferedInputStream-和-BufferedOutputStream/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/dd2d5e65.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -3260,7 +3398,7 @@ PrintStream
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/07/p6-BufferedInputStream-%E5%92%8C-BufferedOutputStream/"  itemprop="url">
+      <a href="/dd2d5e65.html"  itemprop="url">
         p6 BufferedInputStream 和 BufferedOutputStream
       </a>
     </h2>
@@ -3303,7 +3441,7 @@ BufferedInputStream(InputStr...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/07/p6-BufferedInputStream-%E5%92%8C-BufferedOutputStream/' itemprop="url">
+          <a class='readmore' href='/dd2d5e65.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3319,7 +3457,7 @@ BufferedInputStream(InputStr...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/04/p5-节点流-和-处理流/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/769f414f.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -3337,7 +3475,7 @@ BufferedInputStream(InputStr...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/04/p5-%E8%8A%82%E7%82%B9%E6%B5%81-%E5%92%8C-%E5%A4%84%E7%90%86%E6%B5%81/"  itemprop="url">
+      <a href="/769f414f.html"  itemprop="url">
         p5 节点流 和 处理流
       </a>
     </h2>
@@ -3376,161 +3514,7 @@ BufferedInputStream(InputStr...
       </div>
       
         <div>
-          <a class='readmore' href='/2023/05/04/p5-%E8%8A%82%E7%82%B9%E6%B5%81-%E5%92%8C-%E5%A4%84%E7%90%86%E6%B5%81/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/04/p4-FileReader-和-FileWriter/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/04/p4-FileReader-%E5%92%8C-FileWriter/"  itemprop="url">
-        p4 FileReader 和 FileWriter
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        FileReader 和 FileWriterFileReader 和 File Writer 介绍FileReader 和 FileWriter 是字符流，即按照字符来操作 io
-FileReader 相关方法
-
-
-构造方法摘要
-
-
-
-
-Constructor and Description
-
-
-
-FileReader(File file)创建一个新的 FileReader ，给出 Fil...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:37:01+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/05/04/p4-FileReader-%E5%92%8C-FileWriter/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/04/p3-FileInputStream-和-FileOutputStream/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/05/04/p3-FileInputStream-%E5%92%8C-FileOutputStream/"  itemprop="url">
-        p3 FileInputStream 和 FileOutputStream
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        FileInputStream 和 FileOutputStream
-
-InputStream：字节输入流
-InputStream抽象类是所有类输入流的超类
-InputStream 常用的子类
-
-FileInputStream： 文件输入流
-BufferedInputStream：缓冲字节输入流
-ObjectInputStream：对象字节输入流
-
-
-
-FileInputStream
-
-
-构...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:33:32+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/05/04/p3-FileInputStream-%E5%92%8C-FileOutputStream/' itemprop="url">
+          <a class='readmore' href='/769f414f.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3578,8 +3562,8 @@ FileInputStream
   <div class='content'>
     
       
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://c-ssl.dtstatic.com/uploads/blog/202207/01/20220701150350_a1370.thumb.1000_0.jpg'/>
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://images3.alphacoders.com/131/1314539.png'/>
         </a>
       
     
@@ -3665,7 +3649,7 @@ FileInputStream
           <li><a class="flat-box"
             title="/categories/mysql%E5%AD%A6%E4%B9%A0/" href="/categories/mysql%E5%AD%A6%E4%B9%A0/"
             active-action="action-categoriesmysqlE5ADA6E4B9A0"
-            ><div class='name'>mysql学习</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>mysql学习</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>

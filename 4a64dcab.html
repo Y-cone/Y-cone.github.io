@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.10">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/page/2/"/>
+  
+  <link rel="canonical" href="http://example.com/4a64dcab.html"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,18 +32,22 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Y博客</title>
-  <meta name="keywords" content="null">
+  <title>p7 对象流-ObjectInputStream 和 ObjectOutputStream - Y博客</title>
+  <meta name="keywords" content="学习笔记,java,null">
   <meta desc name="description" content="记录自己学习笔记的博客 - yc - Y博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Y博客">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="p7 对象流-ObjectInputStream 和 ObjectOutputStream">
+<meta property="og:url" content="http://example.com/4a64dcab.html">
 <meta property="og:site_name" content="Y博客">
-<meta property="og:description" content="记录自己学习笔记的博客">
+<meta property="og:description" content="对象流ObjectInputStream和ObjectOutputStream引言 看一个需求  将int num&#x3D;100这个 int 数据保存到文件中，注意不是 100 数字，而是 int 100，并且，能够从文件中直接恢复 int 100； 将Dog dog &#x3D; new Dog(“小黄”，3)这个dog对象保存到文件中，并且能够从文件恢复； 上面的要求，就是能够将 基本数据类型 或者 对象 进">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-05-07T14:14:08.000Z">
+<meta property="article:modified_time" content="2023-05-13T09:43:11.323Z">
 <meta property="article:author" content="yc">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2705,7 +2709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://w.wallhaven.cc/full/we/wallhaven-we56z6.png"></div>
 
@@ -2773,15 +2777,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/c1a7681b.html">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/4a64dcab.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
   </span>
@@ -2790,438 +2787,285 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="记录自己学习笔记的博客">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/c1a7681b.html"  itemprop="url">
-        p4 FileReader 和 FileWriter
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        FileReader 和 FileWriterFileReader 和 File Writer 介绍FileReader 和 FileWriter 是字符流，即按照字符来操作 io
-FileReader 相关方法
+    
+      <h1 class="title" itemprop="name headline">
+        p7 对象流-ObjectInputStream 和 ObjectOutputStream
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/Y-cone/" rel="nofollow noopener">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">yc</p>
+  </a>
+</div>
 
-
-构造方法摘要
-
-
-
-
-Constructor and Description
-
-
-
-FileReader(File file)创建一个新的 FileReader ，给出 Fil...
-      
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:37:01+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-07T22:14:08+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年5月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="对象流ObjectInputStream和ObjectOutputStream"><a href="#对象流ObjectInputStream和ObjectOutputStream" class="headerlink" title="对象流ObjectInputStream和ObjectOutputStream"></a>对象流ObjectInputStream和ObjectOutputStream</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
+<li><p>看一个需求</p>
+<ol>
+<li>将int num=100这个 int 数据保存到文件中，注意不是 100 数字，而是 int 100，并且，能够从文件中直接恢复 int 100；</li>
+<li>将Dog dog = new Dog(“小黄”，3)这个dog对象保存到文件中，并且能够从文件恢复；</li>
+<li>上面的要求，就是能够将 基本数据类型 或者 对象 进行 <strong>序列化</strong> 和 <strong>反序列化</strong> 操作；</li>
+</ol>
+</li>
+<li><p><strong>序列化和反序列化</strong></p>
+<ol>
+<li><strong>序列化</strong>就是在保存数据时，<strong>保存</strong>数据的值和数据类型；</li>
+<li><strong>反序列化</strong>就是在恢复数据时，<strong>恢复</strong>数据的值和数据类型；</li>
+<li>需要让某个对象支持序列化机制，则必须让其类是可序列化的，为了让某个类是可序列化的，该类必须实现如下两个接口之一：<ul>
+<li><strong>Serializable</strong>：这是一个标记接口，没有方法</li>
+<li><strong>Externalizable</strong>：该接口有方法需要实现，因此我们一般实现上面的Serializable</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>基本介绍</p>
+<p><img src="/4a64dcab/1683294059815.png" class="lazyload" data-srcset="/4a64dcab/1683294059815.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1683294059815"></p>
+<p><img src="/4a64dcab/1683294081833.png" class="lazyload" data-srcset="/4a64dcab/1683294081833.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1683294081833"></p>
+<ol>
+<li>功能：提供了对基本类型或对象类型的序列化和反序列化的方法；</li>
+<li>ObjectOutputStream 提供 序列化功能；</li>
+<li>ObjectInputStream 提供 反序列化功能；</li>
+</ol>
+</li>
+</ul>
+<h2 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h2><p><img src="/4a64dcab/1683294249069.png" class="lazyload" data-srcset="/4a64dcab/1683294249069.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1683294249069"></p>
+<p>代码演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/5/5 21:51</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 演示ObjectOutputStream的使用，完成数据的序列化</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectOutputStream_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//序列化后，保存的文件格式，不是纯文本，而是按照序列化自己规定的格式来保存</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> <span class="string">&quot;e:\\data.dat&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(filePath));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//序列化数据到 e:\data.dat</span></span><br><span class="line">        oos.writeInt(<span class="number">100</span>);<span class="comment">//int -&gt; Integer（实现了 Serializable）</span></span><br><span class="line">        oos.writeBoolean(<span class="literal">true</span>);<span class="comment">//boolean -&gt; Boolean（实现了 Serializable）</span></span><br><span class="line">        oos.writeChar(<span class="string">&#x27;a&#x27;</span>);<span class="comment">//char -&gt; Character（实现了 Serializable）</span></span><br><span class="line">        oos.writeDouble(<span class="number">9.5</span>);<span class="comment">//double -&gt; Double（实现了 Serializable）</span></span><br><span class="line">        oos.writeUTF(<span class="string">&quot;红楼梦&quot;</span>);<span class="comment">//String</span></span><br><span class="line">        <span class="comment">//保存一个dog对象</span></span><br><span class="line">        oos.writeObject(<span class="keyword">new</span> <span class="title class_">Dog</span>(<span class="string">&quot;旺财&quot;</span>,<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭流</span></span><br><span class="line">        oos.close();</span><br><span class="line">        System.out.println(<span class="string">&quot;数据保存完毕（序列化形式）&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Dog类代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/5/5 23:09</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//如果需要序列化某个对象，实现 Serializable</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//序列化对象时，默认将里面所有的属性都进行序列化，但除了static或transient修饰的成员</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String nation;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> String color;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//序列化对象化时，要求里里面的属性的类型也必须实现序列化接口</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Master</span> <span class="variable">master</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Master</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//serialVersionUID 序列化的版本号，可以提高兼容性</span></span><br><span class="line">    <span class="comment">//这样对该类进行修改后，进行序列化或者反序列化时就不会认为该类</span></span><br><span class="line">    <span class="comment">//是全新的类，只是进行了版本更新</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">serialVersionUID</span> <span class="operator">=</span> <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Dog</span><span class="params">(String name, <span class="type">int</span> age, String nation, String color)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">        <span class="built_in">this</span>.nation = nation;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Dog&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, color = &#x27;&quot;</span> + color + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nation = &#x27;&quot;</span> + nation + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span> + <span class="string">&quot; &quot;</span> + master;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ObjectInputStream"><a href="#ObjectInputStream" class="headerlink" title="ObjectInputStream"></a>ObjectInputStream</h2><p><img src="/4a64dcab/1683293938278.png" class="lazyload" data-srcset="/4a64dcab/1683293938278.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1683293938278"></p>
+<p>代码演示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.hsp.outputstream_.Dog;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/5/5 22:28</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 演示ObjectInputStream的使用，完成数据的反序列化</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectInputStream_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">//指定反序列化的文件</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> <span class="string">&quot;e:\\data.dat&quot;</span>;</span><br><span class="line">        <span class="comment">//反序列化时，要保证和序列化时的信息是一致的，若被序列化的数据的类信息有改动，此时直接反序列化自然会出错，需要重新序列化数据(如果Dog加了serialVersionUID就不会报错)</span></span><br><span class="line">        <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(filePath));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//读取</span></span><br><span class="line">        <span class="comment">//读取（反序列化）的顺序需要和保存数据（序列化）的顺序一致，否则会出现异常</span></span><br><span class="line">        System.out.println(ois.readInt());</span><br><span class="line">        System.out.println(ois.readBoolean());</span><br><span class="line">        System.out.println(ois.readChar());</span><br><span class="line">        System.out.println(ois.readDouble());</span><br><span class="line">        System.out.println(ois.readUTF());</span><br><span class="line">        <span class="type">Object</span> <span class="variable">dog</span> <span class="operator">=</span> ois.readObject();<span class="comment">//底层Object -&gt; Dog</span></span><br><span class="line">        System.out.println(<span class="string">&quot;运行类型 = &quot;</span> + dog.getClass());</span><br><span class="line">        System.out.println(<span class="string">&quot;dog信息 = &quot;</span> + dog);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//要想使用 我们这个反序列化来的Dog对象，还得使Dog可以在这被引用，然后向下转型</span></span><br><span class="line">        <span class="comment">//1. 如果我们希望调用Dog的方法，需要向下转型</span></span><br><span class="line">        <span class="comment">//2. 需要我们将Dog类的定义，放在可以引用的位置</span></span><br><span class="line">        <span class="type">Dog</span> <span class="variable">dog2</span> <span class="operator">=</span> (Dog)dog;</span><br><span class="line">        System.out.println(dog2.getName());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭流</span></span><br><span class="line">        ois.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*运行结果</span></span><br><span class="line"><span class="comment">100</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">a</span></span><br><span class="line"><span class="comment">9.5</span></span><br><span class="line"><span class="comment">红楼梦</span></span><br><span class="line"><span class="comment">运行类型 = class com.hsp.outputstream_.Dog</span></span><br><span class="line"><span class="comment">dog信息 = Dog&#123;name=&#x27;旺财&#x27;, age=10, color = &#x27;null&#x27;, nation = &#x27;null&#x27;&#125; com.hsp.outputstream_.Master@66a29884</span></span><br><span class="line"><span class="comment">旺财</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/c1a7681b.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-13T17:43:11+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年5月13日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/53b48ec9.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div>
+  <span hidden itemprop="keywords">学习笔记 java</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/4a64dcab.html&title=p7 对象流-ObjectInputStream 和 ObjectOutputStream - Y博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/4a64dcab.html&title=p7 对象流-ObjectInputStream 和 ObjectOutputStream - Y博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/4a64dcab.html&title=p7 对象流-ObjectInputStream 和 ObjectOutputStream - Y博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/a4b4e77f.html'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>p8 标准输入输出流</p>
+          <p class='content'>标准输入输出流
+
+
+流
+编译类型
+运行类型
+默认设备
+
+
+
+System.in 标准输入
+InputStream
+BufferedInputStream
+键盘
+
+
+System.in 标准输出
+...</p>
+        </a>
+      
+      
+        <a class='next' href='/dd2d5e65.html'>
+          <p class='title'>p6 BufferedInputStream 和 BufferedOutputStream<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>BufferedInputStream 和 BufferedOutputStream
+BufferedInputStream
+
+
+BufferedInputStream是字节流，在创建Buffe...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/4a64dcab.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/53b48ec9.html"  itemprop="url">
-        p3 FileInputStream 和 FileOutputStream
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        FileInputStream 和 FileOutputStream
 
-InputStream：字节输入流
-InputStream抽象类是所有类输入流的超类
-InputStream 常用的子类
+    <div id="layoutHelper-comments"></div>
 
-FileInputStream： 文件输入流
-BufferedInputStream：缓冲字节输入流
-ObjectInputStream：对象字节输入流
+  </article>
 
 
 
-FileInputStream
 
-
-构...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:33:32+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/53b48ec9.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/7eef035f.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/7eef035f.html"  itemprop="url">
-        p2 IO流原理及流的分类
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Java IO流原理
-I/O是Input/Output的缩写，I/O技术是非常实用的技术，用于处理数据传输。如读/写文件，网络通讯等。
-Java程序中，对于数据的输入/输出操作以”流（stream）“的方式进行。
-java.io包下提供了各种”流“类和接口，用以获取不同种类的数据，并通过方法输入或输出数据。
-输入input：读取外部数据（磁盘、光盘等存储设备的数据）到程序（内存）中。
-输出o...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:27:49+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/7eef035f.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/d549c55e.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/d549c55e.html"  itemprop="url">
-        p1 文件的基本使用
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        文件的基本使用文件
-什么是文件
-文件是保存数据的地方，比如word文档，txt文件，excel文件……都是文件。即可以保存一张图片，也可以保持视频，声音……
-
-
-
-文件流
-文件在程序中是以流的形式来操作的
-
-流：数据在数据源（文件）和程序（内存）之间经历的路径
-输入流： 数据从数据源（文件）到程序（内存）的路径
-输出流：数据从程序（内存）到数据源（文件）的路径
-
-
-常用的文件操作创建文件对象...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-04T22:12:02+08:00">2023-05-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/d549c55e.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/e845031c.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/e845031c.html"  itemprop="url">
-        mysql-存储过程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        存储过程介绍存储过程是事先经过编译并存储在数据库中的一段SQL语句的集合，调用存储过程可以简化应用开发人员的很多工作，减少数据在数据库和应用服务器之间的传输，对于提高数据处理的效率是有好处的。
-存储过程思想上很简单，就是数据库SQL语言层面的代码封装与重用，类似于函数或者说API，封装了系列操作，暴露接口给你进行操作。
-
-特点
-封装，复用
-可以接收参数，也可以返回数据
-减少网络交互，效率提升...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-02T15:33:39+08:00">2023-05-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/mysql%E5%AD%A6%E4%B9%A0/">mysql学习</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/mysql%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">mysql学习</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/e845031c.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/4a17b156.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/4a17b156.html"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-01T21:10:31+08:00">2023-05-01</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/4a17b156.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/">
-            <section class="post prev white-box shadow" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -3232,139 +3076,48 @@ Qu...
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://images3.alphacoders.com/131/1314539.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Y博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesbE7AB99E99FA9E9A1BAE5B9B3javaE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>b站韩顺平java学习笔记</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/mysql%E5%AD%A6%E4%B9%A0/" href="/categories/mysql%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesmysqlE5ADA6E4B9A0"
-            ><div class='name'>mysql学习</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/java/" style="font-size: 19px; color: #777">java</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 24px; color: #555">学习笔记</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ObjectOutputStream"><span class="toc-number">2.</span> <span class="toc-text">ObjectOutputStream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ObjectInputStream"><span class="toc-number">3.</span> <span class="toc-text">ObjectInputStream</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3399,7 +3152,7 @@ Qu...
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -4480,7 +4233,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/b站韩顺平java学习笔记/","name":"b站韩顺平java学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/4a64dcab.html","name":"p7 对象流-ObjectInputStream 和 ObjectOutputStream"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"p7 对象流-ObjectInputStream 和 ObjectOutputStream","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/4a64dcab.html"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/4a64dcab.html","wordCount":0,"datePublished":"2023-05-07T14:14:08.000Z","dateModified":"2023-05-13T09:43:11.323Z","articleSection":"b站韩顺平java学习笔记","keywords":"学习笔记,java","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
