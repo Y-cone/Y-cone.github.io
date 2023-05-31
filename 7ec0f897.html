@@ -33,7 +33,7 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>反射 p2 Class类 - Y博客</title>
-  <meta name="keywords" content="学习笔记,java,null">
+  <meta name="keywords" content="java,学习笔记,null">
   <meta desc name="description" content="记录自己学习笔记的博客 - yc - Y博客">
   
 <meta property="og:type" content="article">
@@ -44,10 +44,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-05-21T14:20:47.000Z">
-<meta property="article:modified_time" content="2023-05-23T08:54:36.099Z">
+<meta property="article:modified_time" content="2023-05-23T08:55:35.052Z">
 <meta property="article:author" content="yc">
-<meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="java">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1908,7 +1908,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1684832134987),
+    lastupdate: new Date(1685537795696),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2865,7 +2865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>Class对象是存放在堆中的；</li>
 <li>类的字节码二进制数据，是存放在方法区的，有的地方称为类的元数据（包括方法代码，变量名，方法名，访问权限等等）；【<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38496907%E3%80%91">https://www.zhihu.com/question/38496907】</a></li>
 </ol>
-<p><img src="/undefined/1684678738077.png" class="lazyload" data-srcset="/undefined/1684678738077.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1684678738077"></p>
+<p><img src="/7ec0f897/1684678738077.png" class="lazyload" data-srcset="/7ec0f897/1684678738077.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1684678738077"></p>
 <h2 id="Class类的常用方法"><a href="#Class类的常用方法" class="headerlink" title="Class类的常用方法"></a><strong>Class类的常用方法</strong></h2><table>
 <thead>
 <tr>
@@ -2918,7 +2918,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>Class02：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hspedu.class_;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.hspedu.Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/5/22 10:28</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 演示Class类的常用方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Class02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchFieldException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">classAllPath</span> <span class="operator">=</span> <span class="string">&quot;com.hspedu.Car&quot;</span>;</span><br><span class="line">        <span class="comment">//1. 获取到Car类 对应的Class对象</span></span><br><span class="line">        <span class="comment">//&lt;?&gt; 表示不确定java类型</span></span><br><span class="line">        Class&lt;?&gt; aClass = Class.forName(classAllPath);</span><br><span class="line">        <span class="comment">//2. 输出 aClass</span></span><br><span class="line">        System.out.println(aClass);<span class="comment">//显示 aClass 是哪个类的Class对象 com.hspedu.Car</span></span><br><span class="line">        System.out.println(aClass.getClass());<span class="comment">//输出 aClass 的运行类型 java.lang.Class</span></span><br><span class="line">        <span class="comment">//3. 得到包名</span></span><br><span class="line">        System.out.println(aClass.getPackage().getName());<span class="comment">//com.hspedu</span></span><br><span class="line">        <span class="comment">//4. 得到全类名</span></span><br><span class="line">        System.out.println(aClass.getName());<span class="comment">//com.hspedu.Car</span></span><br><span class="line">        <span class="comment">//5. 通过 aClass 生成对象实例</span></span><br><span class="line">        <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> (Car) aClass.newInstance();</span><br><span class="line">        System.out.println(car);</span><br><span class="line">        <span class="comment">//6. 通过反射获取属性 brand</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">brand</span> <span class="operator">=</span> aClass.getField(<span class="string">&quot;brand&quot;</span>);</span><br><span class="line">        System.out.println(brand.get(car));</span><br><span class="line">        <span class="comment">//7. 通过反射给字段赋值</span></span><br><span class="line">        brand.set(car, <span class="string">&quot;奔驰&quot;</span>);</span><br><span class="line">        System.out.println(brand.get(car));</span><br><span class="line">        <span class="comment">//8. 得到所有的属性</span></span><br><span class="line">        Field[] fields = aClass.getFields();</span><br><span class="line">        <span class="keyword">for</span> (Field field:</span><br><span class="line">             fields) &#123;</span><br><span class="line">            System.out.println(field.get(car));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="获取Class类对象"><a href="#获取Class类对象" class="headerlink" title="获取Class类对象"></a>获取Class类对象</h2><p><img src="/undefined/1684725138891.png" class="lazyload" data-srcset="/undefined/1684725138891.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1684725138891"></p>
+<h2 id="获取Class类对象"><a href="#获取Class类对象" class="headerlink" title="获取Class类对象"></a>获取Class类对象</h2><p><img src="/7ec0f897/1684725138891.png" class="lazyload" data-srcset="/7ec0f897/1684725138891.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1684725138891"></p>
 <p><strong>获取Class对象的6种方式：</strong></p>
 <ol>
 <li><p><strong>前提：</strong>已知一个类的全类名，且该类在类路径下，可以通过Class类的静态方法 forName()获取，可能抛出ClassNotFoundException。实例：<code>Class cls1 = Class.forName(&quot;java.lang.String&quot;);</code></p>
@@ -2998,7 +2998,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-23T16:54:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-23T16:55:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年5月23日</p>
@@ -3010,8 +3010,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div>
-  <span hidden itemprop="keywords">学习笔记 java</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div>
+  <span hidden itemprop="keywords">java 学习笔记</span>
 
 
         
@@ -3080,6 +3080,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/5e45c00a.html'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>反射 p3 类加载</p>
+          <p class='content'></p>
+        </a>
       
       
         <a class='next' href='/27cced6a.html'>
@@ -4284,7 +4289,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/b站韩顺平java学习笔记/","name":"b站韩顺平java学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/7ec0f897.html","name":"反射 p2 Class类"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"反射 p2 Class类","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/7ec0f897.html"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/7ec0f897.html","wordCount":0,"datePublished":"2023-05-21T14:20:47.000Z","dateModified":"2023-05-23T08:54:36.099Z","articleSection":"b站韩顺平java学习笔记","keywords":"学习笔记,java","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/b站韩顺平java学习笔记/","name":"b站韩顺平java学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/7ec0f897.html","name":"反射 p2 Class类"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"反射 p2 Class类","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/7ec0f897.html"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/7ec0f897.html","wordCount":0,"datePublished":"2023-05-21T14:20:47.000Z","dateModified":"2023-05-23T08:55:35.052Z","articleSection":"b站韩顺平java学习笔记","keywords":"java,学习笔记","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
