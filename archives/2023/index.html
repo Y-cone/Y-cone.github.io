@@ -1904,7 +1904,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685537795696),
+    lastupdate: new Date(1685869994324),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2806,6 +2806,77 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/69d36214.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Y博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Y博客">
+    <meta itemprop="description" content="记录自己学习笔记的博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/69d36214.html"  itemprop="url">
+        反射 p4 反射获取类的结构信息
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        反射获取类的结构信息
+关于Class的API
+
+getName：获取全类名
+getSimpleName：获取简单类名
+getFields：获取所有Public修饰的属性，包含本类及其父类（不仅仅是直接父类）
+getDeclaredFields：获取本类中的所有属性，不包括父类
+getMethods：获取所有public修饰的方法，包含本类及其父类的（不仅仅是直接父类）
+getDeclared...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-06-04T17:10:52+08:00">2023-06-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/69d36214.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/5e45c00a.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
@@ -2831,12 +2902,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='md article-desc' itemprop="articleBody">
     
+      
+        类加载基本说明反射机制是Java实现动态语言的关键，也就是通过反射实现类动态加载。
+
+静态加载：编译时加载相关的类，如果没有则报错，依赖性太强。
+动态加载：运行时加载相关的类，如果运行时不用该类，即使不存在该类，也不会报错，降低了依赖性。
+
+
+代码演示：
+123456789101112131415161718192021222324252627282930313233343536373839...
+      
+    
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
         <time itemprop="dateCreated datePublished" datetime="2023-05-23T16:58:50+08:00">2023-05-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+            </span>
+          
         
       </div>
       
@@ -3441,74 +3531,6 @@ BufferedWriter：包装字符输出流这些流又被称为包装流/处理流�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/3095cec1.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/3095cec1.html"  itemprop="url">
-        mysql 锁
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        锁概述
-介绍 
-锁是计算机协调多个进程或线程并发访问某一资源的机制。在数据库中，除传统的计算资源（CPU、RAM、I/O）的争用以外，数据也是一种供许多用户共享的资源。如何保证数据并发访问的一致性、有效性是所有数据库必须解决的一个问题，锁冲突也是影响数据库并发访问性能的一个重要因素。从这个角度来说，锁对数据库而言显得尤其重要，也更加复杂。
-
-分类
-MySQL中的锁，按照锁的粒度分，分为以下三...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-09T21:39:09+08:00">2023-05-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/mysql%E5%AD%A6%E4%B9%A0/">mysql学习</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/mysql%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">mysql学习</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/3095cec1.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3626,7 +3648,7 @@ MySQL中的锁，按照锁的粒度分，分为以下三...
           <li><a class="flat-box"
             title="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
             active-action="action-categoriesbE7AB99E99FA9E9A1BAE5B9B3javaE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>b站韩顺平java学习笔记</div><div class='badge'>(18)</div></a></li>
+            ><div class='name'>b站韩顺平java学习笔记</div><div class='badge'>(20)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/java%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/" href="/categories/java%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/"

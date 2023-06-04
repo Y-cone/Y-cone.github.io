@@ -33,19 +33,21 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>反射 p3 类加载 - Y博客</title>
-  <meta name="keywords" content="null">
+  <meta name="keywords" content="java,学习笔记,null">
   <meta desc name="description" content="记录自己学习笔记的博客 - yc - Y博客">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="反射 p3 类加载">
 <meta property="og:url" content="http://example.com/5e45c00a.html">
 <meta property="og:site_name" content="Y博客">
-<meta property="og:description" content="记录自己学习笔记的博客">
+<meta property="og:description" content="类加载基本说明反射机制是Java实现动态语言的关键，也就是通过反射实现类动态加载。  静态加载：编译时加载相关的类，如果没有则报错，依赖性太强。 动态加载：运行时加载相关的类，如果运行时不用该类，即使不存在该类，也不会报错，降低了依赖性。   代码演示： 123456789101112131415161718192021222324252627282930313233343536373839404">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-05-23T08:58:50.000Z">
-<meta property="article:modified_time" content="2023-05-23T08:58:50.518Z">
+<meta property="article:modified_time" content="2023-06-04T02:44:28.235Z">
 <meta property="article:author" content="yc">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -1906,7 +1908,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685537795696),
+    lastupdate: new Date(1685869994324),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2814,6 +2816,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+      </span>
+    
+  </div>
+
 
           
         
@@ -2844,7 +2856,64 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <h1 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h1><h2 id="基本说明"><a href="#基本说明" class="headerlink" title="基本说明"></a><strong>基本说明</strong></h2><p>反射机制是Java实现动态语言的关键，也就是通过反射实现类动态加载。</p>
+<ol>
+<li><strong>静态加载：</strong>编译时加载相关的类，如果没有则报错，依赖性太强。</li>
+<li><strong>动态加载：</strong>运行时加载相关的类，如果运行时不用该类，即使不存在该类，也不会报错，降低了依赖性。</li>
+</ol>
+<ul>
+<li><p><strong>代码演示：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassLoad_</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">scan</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">		<span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> scan.next();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">switch</span>(key)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;1&quot;</span>:</span><br><span class="line">				<span class="type">Dog</span> <span class="variable">dog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>();<span class="comment">//静态加载，依赖性很强</span></span><br><span class="line">				dog.cry();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&quot;2&quot;</span>:</span><br><span class="line">				<span class="comment">//反射 -&gt; 动态加载</span></span><br><span class="line">				<span class="type">Class</span> <span class="variable">cls</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;Person&quot;</span>);<span class="comment">//加载Person类[动态加载]</span></span><br><span class="line">				<span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> cls.newInstance();</span><br><span class="line">				<span class="type">Method</span> <span class="variable">m</span> <span class="operator">=</span> cls.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">				m.invoke(o);</span><br><span class="line">				System.out.println(<span class="string">&quot;OK&quot;</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				System.out.println(<span class="string">&quot;do nothing....&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 未写Dog类时，DOS窗口运行结果，编译错误</span></span><br><span class="line"><span class="comment">C:\Users\86199\Desktop&gt;javac ClassLoad_.java</span></span><br><span class="line"><span class="comment">ClassLoad_.java:11: 错误: 找不到符号</span></span><br><span class="line"><span class="comment">                                Dog dog = new Dog();//静态加载，依赖性很强</span></span><br><span class="line"><span class="comment">                                ^</span></span><br><span class="line"><span class="comment">  符号:   类 Dog</span></span><br><span class="line"><span class="comment">  位置: 类 ClassLoad_</span></span><br><span class="line"><span class="comment">ClassLoad_.java:11: 错误: 找不到符号</span></span><br><span class="line"><span class="comment">                                Dog dog = new Dog();//静态加载，依赖性很强</span></span><br><span class="line"><span class="comment">                                              ^</span></span><br><span class="line"><span class="comment">  符号:   类 Dog</span></span><br><span class="line"><span class="comment">  位置: 类 ClassLoad_</span></span><br><span class="line"><span class="comment">注: ClassLoad_.java使用了未经检查或不安全的操作。</span></span><br><span class="line"><span class="comment">注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。</span></span><br><span class="line"><span class="comment">2 个错误</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//因为 new Dog() 是静态加载，因此必须编写Dog类，否则在编译过程就会报错</span></span><br><span class="line"><span class="comment">//Person类是动态加载，所以没有编写Person类在编译过程也不会报错，</span></span><br><span class="line"><span class="comment">//只有在动态加载该类时才会报错</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">cry</span><span class="params">()</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;小狗汪汪叫&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 未写Person类时，DOS窗口运行结果，运行时报错</span></span><br><span class="line"><span class="comment">C:\Users\86199\Desktop&gt;java ClassLoad_</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">小狗汪汪叫</span></span><br><span class="line"><span class="comment">===============================================================</span></span><br><span class="line"><span class="comment">C:\Users\86199\Desktop&gt;java ClassLoad_</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">Exception in thread &quot;main&quot; java.lang.ClassNotFoundException: Person</span></span><br><span class="line"><span class="comment">        at java.net.URLClassLoader.findClass(Unknown Source)</span></span><br><span class="line"><span class="comment">        at java.lang.ClassLoader.loadClass(Unknown Source)</span></span><br><span class="line"><span class="comment">        at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)</span></span><br><span class="line"><span class="comment">        at java.lang.ClassLoader.loadClass(Unknown Source)</span></span><br><span class="line"><span class="comment">        at java.lang.Class.forName0(Native Method)</span></span><br><span class="line"><span class="comment">        at java.lang.Class.forName(Unknown Source)</span></span><br><span class="line"><span class="comment">        at ClassLoad_.main(ClassLoad_.java:16)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">hi</span><span class="params">()</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;hi....&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 写了Peson类后，DOS窗口运行结果</span></span><br><span class="line"><span class="comment">C:\Users\86199\Desktop&gt;java ClassLoad_</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">小狗汪汪叫</span></span><br><span class="line"><span class="comment">=================================================</span></span><br><span class="line"><span class="comment">C:\Users\86199\Desktop&gt;java ClassLoad_</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">hi....</span></span><br><span class="line"><span class="comment">OK</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a><strong>类加载时机</strong></h2><ol>
+<li>当创建对象时（new），静态加载；</li>
+<li>当子类被加载时，父类也加载，静态加载；</li>
+<li>调用类中的静态成员时，静态加载；</li>
+<li>通过反射，动态加载；</li>
+</ol>
+<h2 id="类加载流程"><a href="#类加载流程" class="headerlink" title="类加载流程"></a><strong>类加载流程</strong></h2><h3 id="类加载流程图"><a href="#类加载流程图" class="headerlink" title="类加载流程图"></a><strong>类加载流程图</strong></h3><ul>
+<li><p><strong>类加载过程图</strong></p>
+<p><img src="/1685707493534.png" class="lazyload" data-srcset="/1685707493534.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1685707493534"></p>
+</li>
+<li><p><strong>类加载各阶段完成的任务</strong></p>
+<p><img src="/1685707569194.png" class="lazyload" data-srcset="/1685707569194.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1685707569194"></p>
+</li>
+</ul>
+<h3 id="类加载五个阶段"><a href="#类加载五个阶段" class="headerlink" title="类加载五个阶段"></a>类加载五个阶段</h3><ol>
+<li><p><strong>加载阶段（Loading）</strong></p>
+<p>JVM在该阶段的主要目的是将字节码从不同的数据源（可能是class文件、也可能是jar包，甚至网络）==转化为二进制字节流加载到内存中==，并生成一个代表该类的java.lang.Class对象；</p>
+</li>
+<li><p><strong>连接阶段（Linking）</strong></p>
+<ol>
+<li><p><strong>验证（Verification）：</strong></p>
+<ul>
+<li><strong>目的：</strong>是为了确保Class文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全；</li>
+<li><strong>包括：</strong>文件格式验证（是否以魔数 oxcafebabe 开头）、元数据验证、字节码验证和符号引用验证；</li>
+<li>可以考虑使用 -Xverify:none 参数来关闭大部分的类验证措施，缩短虚拟机加载的时间；</li>
+</ul>
+</li>
+<li><p><strong>准备（Preparation）：</strong></p>
+<p>JVM 会在该阶段对静态变量，分配内存并默认初始化（对应数据类型的默认初始值，如0、0L、null、false等）。这些变量所使用的内存都将在方法区中进行分配。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hspedu.classload_;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/6/2 21:19</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 说明类加载夹的连接阶段（Linking）-准备（Preparation）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassLoad02</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="comment">//属性-字段-成员变量</span></span><br><span class="line">    <span class="comment">//分析类加载阶段的连接阶段（Linking）-准备，属性是如何处理的</span></span><br><span class="line">    <span class="comment">//1. n1是实例属性，不是静态变量，因此在准备阶段是不会分配内存的</span></span><br><span class="line">    <span class="comment">//2. n2是静态属性，分配内存，n2 默认初始化为0，而不是20，20是在连接阶段之后的初始化阶段进行的</span></span><br><span class="line">    <span class="comment">//3. n3是static final 是常量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">n2</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">n3</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>解析（Resolution）：</strong>虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>初始化（Initialization）：</strong></p>
+<ul>
+<li><p>到初始化阶段，才是真正的开始执行类中定义的Java程序代码，此阶段是执行<clinit>()方法的过程；</p>
+</li>
+<li><p><clinit>()方法是由编译器按语句在源文件中出现的顺序，依次自动收集类中的所有==静态变量==的赋值动作和==静态代码块==中的语句，并进行合并；</p>
+</li>
+<li><p>虚拟机会保证一个类的<clinit>()方法在多线程环境中被正确地加锁、同步，如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的<clinit>()方法，其他线程都需要阻塞等待，直到活动线程执行<clinit>()方法完毕；</p>
+<p><strong>源码：</strong></p>
+<p><img src="/1685717649024.png" class="lazyload" data-srcset="/1685717649024.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1685717649024"></p>
+</li>
+</ul>
+<p><strong>案例演示：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hspedu.classload_;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 86199</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2023/6/2 22:19</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 演示类加载——初始化阶段（Initialization）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassLoad03_</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;ClassLoad03_ 静态代码块被执行&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">//1. Loading：加载B类，并生成B类的Class对象</span></span><br><span class="line">        <span class="comment">//2. Linking：num = 0</span></span><br><span class="line">        <span class="comment">//3. Initialization：</span></span><br><span class="line">        <span class="comment">//      依次收集类中所有的静态变量和静态代码块中的语句入clinit()中，并合并</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            clinit()&#123;</span></span><br><span class="line"><span class="comment">                System.out.println(&quot;B 静态代码块被执行&quot;);</span></span><br><span class="line"><span class="comment">                //num = 300;</span></span><br><span class="line"><span class="comment">                num = 100;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">            合并：num = 300, num = 100  --&gt; num = 100</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        new B();//也会使B类加载，但是B类加载只会执行一遍</span></span><br><span class="line"><span class="comment">//        System.out.println(B.num);//直接使用B类的静态属性，也会导致B类加载</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//看看类加载时，是有同步机制控制的</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            protected Class&lt;?&gt; loadClass(String name, boolean resolve)</span></span><br><span class="line"><span class="comment">                throws ClassNotFoundException</span></span><br><span class="line"><span class="comment">            &#123;</span></span><br><span class="line"><span class="comment">                synchronized (getClassLoadingLock(name)) &#123;</span></span><br><span class="line"><span class="comment">                //拿到一个同步锁，正因为有这个机制，才能保证某个类在内存中只有一份Class对象</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Class&lt;?&gt; aClass = Class.forName(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;B 静态代码块被执行&quot;</span>);</span><br><span class="line">        num = <span class="number">300</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">B</span><span class="params">()</span> &#123;<span class="comment">//构造器</span></span><br><span class="line">        System.out.println(<span class="string">&quot;B() 构造器被执行...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+
   </div>
   
   
@@ -2868,10 +2937,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-23T16:58:50+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-04T10:44:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年5月23日</p>
+    <p>更新于：2023年6月4日</p>
   </a>
 </div>
 
@@ -2879,6 +2948,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学习笔记</p></a></div>
+  <span hidden itemprop="keywords">java 学习笔记</span>
+
 
         
       
@@ -2947,6 +3020,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/69d36214.html'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>反射 p4 反射获取类的结构信息</p>
+          <p class='content'>反射获取类的结构信息
+关于Class的API
+
+getName：获取全类名
+getSimpleName：获取简单类名
+getFields：获取所有Public修饰的属性，包含本类及其父类（不仅仅...</p>
+        </a>
+      
       
         <a class='next' href='/7ec0f897.html'>
           <p class='title'>反射 p2 Class类<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -3002,9 +3085,19 @@ Class类对象不是new出来的，而是系统创建的；
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">基本说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%97%B6%E6%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">类加载时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">类加载流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">3.1.</span> <span class="toc-text">类加载流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%BA%94%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">3.2.</span> <span class="toc-text">类加载五个阶段</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4139,7 +4232,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/5e45c00a.html","name":"反射 p3 类加载"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"反射 p3 类加载","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/5e45c00a.html"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/5e45c00a.html","wordCount":0,"datePublished":"2023-05-23T08:58:50.000Z","dateModified":"2023-05-23T08:58:50.518Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"记录自己学习笔记的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Y博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/b站韩顺平java学习笔记/","name":"b站韩顺平java学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/5e45c00a.html","name":"反射 p3 类加载"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Y博客","url":"http://example.com/","keywords":null,"description":"记录自己学习笔记的博客","author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"记录自己学习笔记的博客"},"publisher":{"@type":"Organization","name":"Y博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"反射 p3 类加载","description":"记录自己学习笔记的博客","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/5e45c00a.html"},"author":{"@type":"Person","name":"yc","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Y博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/5e45c00a.html","wordCount":0,"datePublished":"2023-05-23T08:58:50.000Z","dateModified":"2023-06-04T02:44:28.235Z","articleSection":"b站韩顺平java学习笔记","keywords":"java,学习笔记","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

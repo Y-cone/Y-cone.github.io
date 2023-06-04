@@ -1904,7 +1904,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685537795696),
+    lastupdate: new Date(1685869994324),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2808,6 +2808,147 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/69d36214.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Y博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Y博客">
+    <meta itemprop="description" content="记录自己学习笔记的博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/69d36214.html"  itemprop="url">
+        反射 p4 反射获取类的结构信息
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        反射获取类的结构信息
+关于Class的API
+
+getName：获取全类名
+getSimpleName：获取简单类名
+getFields：获取所有Public修饰的属性，包含本类及其父类（不仅仅是直接父类）
+getDeclaredFields：获取本类中的所有属性，不包括父类
+getMethods：获取所有public修饰的方法，包含本类及其父类的（不仅仅是直接父类）
+getDeclared...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-06-04T17:10:52+08:00">2023-06-04</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/69d36214.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/5e45c00a.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Y博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Y博客">
+    <meta itemprop="description" content="记录自己学习笔记的博客">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/5e45c00a.html"  itemprop="url">
+        反射 p3 类加载
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        类加载基本说明反射机制是Java实现动态语言的关键，也就是通过反射实现类动态加载。
+
+静态加载：编译时加载相关的类，如果没有则报错，依赖性太强。
+动态加载：运行时加载相关的类，如果运行时不用该类，即使不存在该类，也不会报错，降低了依赖性。
+
+
+代码演示：
+123456789101112131415161718192021222324252627282930313233343536373839...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-23T16:58:50+08:00">2023-05-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/5e45c00a.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/7ec0f897.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Y博客">
@@ -3392,156 +3533,6 @@ MySQL中的锁，按照锁的粒度分，分为以下三...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/d71f2100.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/d71f2100.html"  itemprop="url">
-        mysql-触发器
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        触发器介绍触发器是与表有关的数据库对象，指在insert/update/delete之前或之后，触发并执行触发器中定义SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性，日志记录，数据校验等操作。
-使用别 名OLD 和 NEW 来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。现在触发器还只支持行级触发，不支持语句级触发。
-
-
-
-触发器类型
-NEW 和 OLD
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-09T21:37:31+08:00">2023-05-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/mysql%E5%AD%A6%E4%B9%A0/">mysql学习</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/mysql%E5%AD%A6%E4%B9%A0/" itemprop="url"><span itemprop="name">mysql学习</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/d71f2100.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/c33f51f5.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Y博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Y博客">
-    <meta itemprop="description" content="记录自己学习笔记的博客">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/c33f51f5.html"  itemprop="url">
-        p11 Properties
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        # Properties类
-
-基本介绍
-
-
-专门用于读写配置文件的集合类
-配置文件的格式：
-键=值
-键=值
-
-注意：键值对不需要有空格，值不需要用引号一起来。默认类型是String。
-
-Properties的常见方法
-
-load：加载配置文件的键值对 到Properties对象；
-list：将数据显示到指定设备/流对象；
-getProperty(key)：根据键获取值；
-setPropert...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-05-08T21:37:21+08:00">2023-05-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">b站韩顺平java学习笔记</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">b站韩顺平java学习笔记</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/c33f51f5.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3660,7 +3651,7 @@ setPropert...
           <li><a class="flat-box"
             title="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/b%E7%AB%99%E9%9F%A9%E9%A1%BA%E5%B9%B3java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
             active-action="action-categoriesbE7AB99E99FA9E9A1BAE5B9B3javaE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>b站韩顺平java学习笔记</div><div class='badge'>(18)</div></a></li>
+            ><div class='name'>b站韩顺平java学习笔记</div><div class='badge'>(20)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/java%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/" href="/categories/java%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98/"
